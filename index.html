@@ -3,7 +3,7 @@
     <title>SUPER KLASSE SEITE!</title>
     <style>
         body {
-          background-image: url("https://acegif.com/wp-content/gifs/rainbow-38.gif");
+          background-image: url("https://images.pexels.com/photos/7134986/pexels-photo-7134986.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500");
           font-family: Arial Black, Gadget, sans-serif;
           background-repeat: no-repeat;
           background-size: cover;
@@ -53,6 +53,11 @@ border-width: 30px;
 }
 #counter{font-size: 24px;
 }
+#turtle{width:100px;
+height:100px;
+position: absolute;
+top:0px; left:0px
+}
     </style>
   </head>
   <body>
@@ -85,21 +90,63 @@ border-width: 30px;
       <li>aber ungeordnet</li>
       <li>(die Reihenfolge spielt keine Rolle)</li>
     </ul>
+    <div id="turtle">
+      <img width="350px" style="max-width:95%;border:6px inset #6aff00;" 
+      src="https://img.bildderfrau.de/img/familie-leben/crop227523835/6601003145-w1200-cv1_1-q85-dc1/Katzenbaby.jpg"></div>
     <h2>super schöne Links:</h2>
     <a target="_blank"href="https://www.youtube.com/watch?v=gJhlyBJHv9I">->  klicke hier für ein tanzendes Alien  <-</a>
     <p><a target="_blank" href="https://www.bahn.de/">->  klicke hier, wenn du niemals pünktlich anzukommen!  <-</a></p>
     <p><a target="_blank" href="https://www.youtube.com/watch?v=dQw4w9WgXcQ">->  klicke hier für süße Babykatzen :)  <-</a></p>
 <p id="counter" class="animated_rainbow_2 "></p>
-    <button onclick="functionToExecute()">klicke hier für einen super tollen counter</button>
+    <button onclick="functionToExecute ()">klicke hier für einen super tollen counter</button>
+    <button onclick="functionToExecute2 ()">klicke hier um Zahlen vom counter abzuziehen</button>
+    <button onclick="functionToExecute3 ()">klicke hier um ein schönes rotes Kästchen zu bewegen</button>
     <script>
       var counter=0
       function functionToExecute () {
         const name = document.getElementById("counter");
         console.log(name)
-        counter=counter + 1
+        if(counter <= 9){counter=counter + 1}
         name.innerText=counter
 } 
-    </script>
+function functionToExecute2 () {
+        const name = document.getElementById("counter");
+        console.log(name)
+if(counter > 0){counter=counter - 1}
+        name.innerText=counter
+} 
+var left=0
+var xtop=0
+document.onkeydown = checkKey;
 
+function checkKey(e) {
+
+    e = e || window.event;
+
+    if (e.keyCode == '38') {
+        // up arrow
+        const name = document.getElementById("turtle");
+  xtop=xtop - 30
+  name.style.top=xtop + "px"
+    }
+    else if (e.keyCode == '40') {
+        // down arrow
+        const name = document.getElementById("turtle");
+  xtop=xtop + 30
+  name.style.top=xtop + "px"
+    }
+    else if (e.keyCode == '37') {
+       // left arrow
+       const name = document.getElementById("turtle");
+  left=left - 30
+  name.style.left=left + "px"
+    }
+    else if (e.keyCode == '39') {
+       // right arrow
+       const name = document.getElementById("turtle");
+  left=left + 30
+  name.style.left=left + "px"    }
+}
+    </script>
   </body>
 </html>
