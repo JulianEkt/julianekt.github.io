@@ -43,6 +43,16 @@
         0% { background-position: 0 0 }
         100% { background-position: -500px 0 }
     }    
+button{
+  background-color: hsl(306,80%,60%);
+  height: 125px;
+  border-radius: 10px 45px 25px 5px;
+  width: 150px;
+border-color: #7dffe1;
+border-width: 30px;
+}
+#counter{font-size: 24px;
+}
     </style>
   </head>
   <body>
@@ -79,5 +89,17 @@
     <a target="_blank"href="https://www.youtube.com/watch?v=gJhlyBJHv9I">->  klicke hier für ein tanzendes Alien  <-</a>
     <p><a target="_blank" href="https://www.bahn.de/">->  klicke hier, wenn du niemals pünktlich anzukommen!  <-</a></p>
     <p><a target="_blank" href="https://www.youtube.com/watch?v=dQw4w9WgXcQ">->  klicke hier für süße Babykatzen :)  <-</a></p>
+<p id="counter" class="animated_rainbow_2 "></p>
+    <button onclick="functionToExecute()">klicke hier für einen super tollen counter</button>
+    <script>
+      var counter=0
+      function functionToExecute () {
+        const name = document.getElementById("counter");
+        console.log(name)
+        counter=counter + 1
+        name.innerText=counter
+} 
+    </script>
+
   </body>
 </html>
