@@ -56,7 +56,8 @@ border-width: 30px;
 #turtle{width:100px;
 height:100px;
 position: absolute;
-top:0px; left:0px
+top:0px; left:0px;
+z-index:1000
 }
     </style>
   </head>
@@ -109,12 +110,12 @@ top:0px; left:0px
     <div><img width="200px" style="top:1200px;left:757px;position:absolute"src="/docs/assets/fish.png"></div>
     <div><img width="200px" style="top:950px;left:1045px;position:absolute"src="/docs/assets/fish.png"></div>
     <div><img width="200px" style="top:535px;left:1265px;position:absolute"src="/docs/assets/fish.png"></div>
-      <script>
+    <script>
       var counter=0
       function functionToExecute () {
         const name = document.getElementById("counter");
         console.log(name)
-        if(counter <= 9){counter=counter + 1}
+        if(counter <= 9999){counter=counter + 1}
         name.innerText=counter
 } 
 function functionToExecute2 () {
