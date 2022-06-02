@@ -38,7 +38,6 @@
         -webkit-text-fill-color: #0000;
         background-clip: text;
     }
-    
     @keyframes animatedBackground_a {
         0% { background-position: 0 0 }
         100% { background-position: -500px 0 }
@@ -59,21 +58,18 @@ position: absolute;
 top:0px; left:0px;
 z-index:1000
 }
+      #box {
+        width: 100px;
+        height: 100px;
+        background-size: contain;
+        margin: 20px;
+      }
     </style>
   </head>
   <body>
-    <h1> <strong>Super klasse Überschrift</strong> </h1>
+        <h1> <strong>Super klasse Überschrift</strong> </h1>
     <p>das hier ist ein Test</p>
     <p> <strong>sehr schönes Bild:</strong></p>
-  </body>
-</html>
-<!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <title>Eine super klasse Seite!</title>
-  </head>
-  <body>
     <img width="350px" style="max-width:95%;border:6px inset #6aff00;" 
     src="https://www.zooplus.de/magazin/wp-content/uploads/2020/10/kitten-sitzt-boden-768x512.jpeg" alt="Fehler" />
      <h2><div class="animated_rainbow_1">hier geht es weiter:</div></h2>
@@ -89,7 +85,7 @@ z-index:1000
     <ul>
       <li>hier ist noch eine Liste</li>
       <li>aber ungeordnet</li>
-      <li>(die Reihenfolge spielt keine Rolle)</li>
+      <p><li>(die Reihenfolge spielt keine Rolle)</li>
     </ul>
     <div id="turtle">
       <img width="350px" style="max-width:95%;border:6px inset #6aff00;" 
@@ -99,9 +95,11 @@ z-index:1000
     <p><a target="_blank" href="https://www.bahn.de/">->  klicke hier, wenn du niemals pünktlich anzukommen!  <-</a></p>
     <p><a target="_blank" href="https://www.youtube.com/watch?v=dQw4w9WgXcQ">->  klicke hier für süße Babykatzen :)  <-</a></p>
 <p id="counter" class="animated_rainbow_2 "></p>
+<button  onclick="play()" id="roll">hier kannst du Würfeln . . . .. . . . . . . . .</button>
+<audio id="audio" src="RATTLE1.wav"></audio>
     <button onclick="functionToExecute ()">klicke hier für einen super tollen counter</button>
     <button onclick="functionToExecute2 ()">klicke hier um Zahlen vom counter abzuziehen</button>
-    <button onclick="functionToExecute3 ()">dieser button hat noch keine Funktion</button>
+    <div id="box"></div>
     <div><img width="200px" style="top:100px;left:1000px;position:absolute"src="/docs/assets/fish.png"></div>
     <div><img width="200px" style="top:57px;left:1567px;position:absolute"src="/docs/assets/fish.png"></div>
     <div><img width="200px" style="top:670px;left:345px;position:absolute"src="/docs/assets/fish.png"></div>
@@ -110,6 +108,7 @@ z-index:1000
     <div><img width="200px" style="top:1200px;left:757px;position:absolute"src="/docs/assets/fish.png"></div>
     <div><img width="200px" style="top:950px;left:1045px;position:absolute"src="/docs/assets/fish.png"></div>
     <div><img width="200px" style="top:535px;left:1265px;position:absolute"src="/docs/assets/fish.png"></div>
+    
     <script>
       var counter=0
       function functionToExecute () {
@@ -127,9 +126,7 @@ if(counter > 0){counter=counter - 1}
 var left=0
 var xtop=0
 document.onkeydown = checkKey;
-
 function checkKey(e) {
-
     e = e || window.event;
 
     if (e.keyCode == '38') {
@@ -156,6 +153,15 @@ function checkKey(e) {
   left=left + 30
   name.style.left=left + "px"    }
 }
+document.getElementById('roll').addEventListener('click', clickHandler);
+    function clickHandler() {
+      var zahl = Math.floor(Math.random() * 6) + 1
+      document.getElementById('box').style.backgroundImage = "url('" + zahl + ".png')";
+    }
+    function play() {
+        var audio = document.getElementById("audio");
+        audio.play();
+      }
     </script>
   </body>
 </html>
